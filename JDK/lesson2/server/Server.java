@@ -45,15 +45,12 @@ public class Server {
         return true;
     }
 
-    // Метод удаления клиента из списка подключенных клиентов при закрытии окна
-    // клиента
     public void disconnectUser(Client client) {
         if (client != null) {
             clientList.remove(client);
         }
     }
 
-    // Метод принудительного отключения всех пользователей при остановке сервера.
     public void serverDown(Client client) {
         if (client != null) {
             client.disconnectFromServer();
